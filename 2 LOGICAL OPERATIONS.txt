@@ -1,0 +1,57 @@
+Logical operations:
+
+AND:
+
+org 100h
+mov ax, 21h
+and ax, 12h
+mov ah, 4Ch
+int 21h
+
+
+OR:
+
+org 100h
+mov ax, 1221h
+or ax, 0f0fh
+mov ah, 4Ch
+int 21h
+
+
+NEG:
+
+org 100h
+mov ax, 0000h
+mov bx, 0000h
+mov cx, 0000h
+mov dx, 0000h
+mov ax, 0021h
+mov bx, 0031h
+neg ax
+mov ah, 4Ch
+int 21h
+
+
+NOT:
+
+org 100h
+mov ax, 0000h
+mov bx, 0000h
+mov cx, 0000h
+mov dx, 0000h
+mov ax, 0021h
+mov bx, 0031h
+not ax
+mov ah, 4Ch
+int 21h
+
+
+XOR:
+
+org 100h
+mov ax, 0021h
+mov bx, 0031h
+xor ax, bx
+mov ah, 4Ch
+int 21h
+

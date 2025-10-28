@@ -1,0 +1,42 @@
+.MODEL SMALL
+.STACK 100H
+SEARCH FOR A NUMBER IN A LIST :
+
+.DATA
+Numbers DB 10,20,30,40,50
+count   DB 5
+key     DB 30
+foundMsg     DB 'Number Found!$'
+notFoundMsg  DB 'Number Not Found!$'
+
+.CODE
+MAIN PROC
+MOV AX, @DATA
+MOV DS, AX
+
+MOV CL, count
+MOV SI, 0
+
+search_loop:
+MOV AL, Numbers[SI]
+CMP AL, key
+JE found
+INC SI
+DEC CL
+JNZ search_loop
+
+MOV DX, OFFSET notFoundMsg
+MOV AH, 09H
+INT 21H
+JMP exit
+
+found:
+MOV DX, OFFSET foundMsg
+MOV AH, 09H
+INT 21H
+
+exit:
+MOV AH, 4CH
+INT 21H
+MAIN ENDP
+END MAIN

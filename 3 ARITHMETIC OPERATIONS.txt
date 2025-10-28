@@ -1,0 +1,25 @@
+Arithmetic operations:
+
+ADD:
+org 100h
+mov ax, 06h
+mov bx, 03h
+add ax,bx
+
+SUB:
+org 100h
+mov ax, 09h
+mov bx, 04h
+sub ax,bx
+
+MUL:
+org 100h
+mov ax, 1100h
+mov bx, 1102h
+mul bx
+
+DIV:
+org 100h
+mov al, 09h
+mov bl, 03h
+div bl
