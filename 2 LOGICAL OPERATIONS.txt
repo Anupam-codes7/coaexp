@@ -55,3 +55,14 @@ xor ax, bx
 mov ah, 4Ch
 int 21h
 
+
+mov ax,0000h
+mov bx,0000h
+mov cx, 0000h
+mov dx, 0000h
+mov ax, 0021h
+mov bx,0031h
+AND ax, bx ; AX=0021
+OR ax, bx ; AX= 0031
+Neg ax ; AX= FFCF
+NOT ax ;AX=0030
